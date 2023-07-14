@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:invader/home_page.dart';
+import 'package:invader/pallete.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,10 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      debugShowCheckedModeBanner: false,
+      title: 'Invader',
+      theme: ThemeData.light(
         useMaterial3: true,
+      ).copyWith(
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Pallete.whiteColor,
+        ),
+        scaffoldBackgroundColor: Pallete.whiteColor,
       ),
       home: const HomePage(),
     );
